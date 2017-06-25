@@ -19,7 +19,8 @@
     "code": "^1.5.0",
     "flat": "^2.0.1",
     "lab": "^5.15.1",
-    "sinon": "^2.3.5"
+    "sinon": "^2.3.5",
+    "sinon-chai": "^2.11.0"
   },
   "dependencies": {
     "bluebird": "^3.4.7",
