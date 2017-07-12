@@ -23,6 +23,7 @@
     "sinon-chai": "^2.11.0"
   },
   "dependencies": {
+    "async": "^2.5.0",
     "bluebird": "^3.4.7",
     "camelcase": "^3.0.0",
     "country-list": "^1.1.0",
