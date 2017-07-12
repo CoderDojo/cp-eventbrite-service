@@ -4,8 +4,6 @@ machine:
   environment:
     LANG: en_US.utf8
 dependencies:
-  pre:
-    - npm -g install npm@latest-2
   override:
     - npm install
 test:
