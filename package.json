@@ -28,7 +28,7 @@
     "camelcase": "^3.0.0",
     "country-list": "^1.1.0",
     "cp-logs-lib": "git://github.com/CoderDojo/cp-logs-lib#1.1.0",
-    "cp-permissions-plugin": "git://github.com/CoderDojo/cp-permissions-plugin#1.0.1",
+    "cp-permissions-plugin": "git://github.com/CoderDojo/cp-permissions-plugin#1.0.4",
     "decamelize": "^1.2.0",
     "glob": "^7.1.1",
     "heapdump": "^0.3.7",
