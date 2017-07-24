@@ -1,0 +1,10 @@
+.git
+.gitignore
+*.md
+*Dockerfile
+*.sh
+!docker-entrypoint.sh
+deploy
+example
+*.yml
+node_modules
