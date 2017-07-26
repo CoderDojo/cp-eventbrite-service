@@ -6,7 +6,9 @@
   "scripts": {
     "test": "lab lib -P spec -r console -v -m 3000 -c -t 80",
     "testjoi": "lab test/joi.test.js -r console -v -m 3000 -c -t 80",
-    "testskeleton": "lab test/skeleton.js -r console -v -m 3000 -c -t 80"
+    "testskeleton": "lab test/skeleton.js -r console -v -m 3000 -c -t 80",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [
     "eventbrite",
@@ -19,6 +21,7 @@
     "code": "^1.5.0",
     "flat": "^2.0.1",
     "lab": "^5.15.1",
+    "nodemon": "^1.11.0",
     "sinon": "^2.3.5",
     "sinon-chai": "^2.11.0"
   },
