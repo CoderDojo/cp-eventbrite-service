@@ -10,10 +10,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "keywords": [
-    "eventbrite",
-    "coderdojo"
-  ],
+  "keywords": ["eventbrite", "coderdojo"],
   "author": "Coderdojo",
   "license": "MIT",
   "devDependencies": {
