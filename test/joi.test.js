@@ -13,7 +13,7 @@ var Joi = require('joi')
 var JoiPlugin = require('seneca-joi')
 
 describe('joi', function () {
-  it.only('happy', function (done) {
+  it('happy', function (done) {
     Seneca({log: 'silent', legacy: {error_codes: false, validate: false}})
       .use('seneca-joi')
       .add({a: 1, b: Joi.required()}, function (msg, done) {
