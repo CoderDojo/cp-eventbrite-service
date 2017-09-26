@@ -4,23 +4,23 @@ jobs:
   build:
     working_directory: ~/cp-eventbrite-service
     docker:
-      - image: nodesource/node:0.10.45
+      - image: node:8.4
         environment:
           NODE_ENV: testing
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "yarn.lock" }}
       - run:
           name: Install Dependencies
-          command: npm install
+          command: yarn
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
       - run:
           name: Tests
-          command: npm run test
+          command: yarn test
   deploy:
     working_directory: ~/cp-eventbrite-service
     docker:

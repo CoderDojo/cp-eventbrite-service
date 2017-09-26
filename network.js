@@ -1,15 +1,14 @@
-'use strict';
-
-module.exports = function (seneca) {
-  seneca.listen()
+module.exports = (seneca) => {
+  seneca
+    .listen()
     .client({
       type: 'web',
       host: process.env.CD_DOJOS || 'localhost',
       port: 10301,
       pin: {
         role: 'cd-dojos',
-        cmd: '*'
-      }
+        cmd: '*',
+      },
     })
     .client({
       type: 'web',
@@ -17,7 +16,7 @@ module.exports = function (seneca) {
       port: 10306,
       pin: {
         role: 'cd-events',
-        cmd: '*'
-      }
+        cmd: '*',
+      },
     });
 };
