@@ -1,6 +1,6 @@
 FROM node:carbon-alpine
 ARG DEP_VERSION=latest
-MAINTAINER butlerx <butlerx@notthe.cloud>
+LABEL maintainer="butlerx <cian@coderdojo.org>"
 RUN apk add --update git build-base python postgresql-client && \
     mkdir -p /usr/src/app
 WORKDIR /usr/src/app

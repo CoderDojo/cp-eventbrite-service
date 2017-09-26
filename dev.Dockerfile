@@ -1,5 +1,5 @@
 FROM node:carbon-alpine
-MAINTAINER butlerx <cian@coderdojo.com>
+LABEL maintainer="butlerx <cian@coderdojo.org>"
 RUN apk add --update git build-base python postgresql-client && \
     mkdir -p /usr/src/app /usr/src/cp-translations
 COPY docker-entrypoint.sh /usr/src
