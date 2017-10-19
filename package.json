@@ -34,7 +34,6 @@
     "cp-permissions-plugin": "git://github.com/CoderDojo/cp-permissions-plugin#1.0.4",
     "decamelize": "^1.2.0",
     "glob": "^7.1.1",
-    "heapdump": "^0.3.7",
     "joi": "^6.1",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
