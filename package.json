@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "lab lib -P spec -r console -v -m 3000 -c -t 80",
-    "test-joi": "lab test/joi.test.js -r console -v -m 3000 -c -t 80",
+    "test-joi": "lab test/joi.test.js -r console -v -m 3000",
     "test-skeleton": "lab test/skeleton.js -r console -v -m 3000 -c -t 80",
     "lint": "eslint .",
     "fix": "eslint . --fix",

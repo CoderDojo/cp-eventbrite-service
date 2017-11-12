@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/cp-eventbrite-service
     docker:
-      - image: node:8.4
+      - image: node:carbon
         environment:
           NODE_ENV: testing
     steps:
@@ -19,8 +19,14 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: Tests
+          name: Unit Tests
           command: yarn test
+      - run:
+          name: Test joi
+          command: yarn test-joi
+      - run:
+          name: Test skeleton
+          command: yarn test-skeleton
   deploy:
     working_directory: ~/cp-eventbrite-service
     docker:

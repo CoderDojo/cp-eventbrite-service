@@ -1,4 +1,4 @@
-FROM node:8-alpine
+FROM node:carbon-alpine
 MAINTAINER butlerx <cian@coderdojo.com>
 RUN apk add --update git build-base python postgresql-client && \
     mkdir -p /usr/src/app /usr/src/cp-translations

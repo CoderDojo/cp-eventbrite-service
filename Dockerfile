@@ -1,4 +1,4 @@
-FROM node:8-alpine
+FROM node:carbon-alpine
 ARG DEP_VERSION=latest
 MAINTAINER butlerx <butlerx@notthe.cloud>
 RUN apk add --update git build-base python postgresql-client && \

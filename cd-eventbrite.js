@@ -50,14 +50,11 @@ module.exports = function cdEventbrite() {
   };
   _.each(ctrls, (ctrl, entity) => {
     Object.entries(ctrl.acts).forEach(([key, { validation, cb }]) => {
-      const act = _.extend(
-        {
-          role: plugin,
-          ctrl: entity,
-          cmd: key,
-        },
-        validation,
-      );
+      const act = _.extend({
+        role: plugin,
+        ctrl: entity,
+        cmd: key,
+      }, validation);
       seneca.add(act, cb);
       seneca.log.info('added act', act, { joi$: validation });
       /*
