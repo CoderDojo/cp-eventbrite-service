@@ -4,23 +4,29 @@ jobs:
   build:
     working_directory: ~/cp-eventbrite-service
     docker:
-      - image: nodesource/node:0.10.45
+      - image: node:carbon
         environment:
           NODE_ENV: testing
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "yarn.lock" }}
       - run:
           name: Install Dependencies
-          command: npm install
+          command: yarn
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
       - run:
-          name: Tests
-          command: npm run test
+          name: Unit Tests
+          command: yarn test
+      - run:
+          name: Test joi
+          command: yarn test-joi
+      - run:
+          name: Test skeleton
+          command: yarn test-skeleton
   deploy:
     working_directory: ~/cp-eventbrite-service
     docker:
@@ -51,4 +57,3 @@ workflows:
             branches:
               only:
                 - master
-                - staging

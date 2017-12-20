@@ -5,25 +5,30 @@
   "main": "index.js",
   "scripts": {
     "test": "lab lib -P spec -r console -v -m 3000 -c -t 80",
-    "testjoi": "lab test/joi.test.js -r console -v -m 3000 -c -t 80",
-    "testskeleton": "lab test/skeleton.js -r console -v -m 3000 -c -t 80",
+    "test-joi": "lab test/joi.test.js -r console -v -m 3000",
+    "test-skeleton": "lab test/skeleton.js -r console -v -m 3000 -c -t 80",
+    "lint": "eslint .",
+    "fix": "eslint . --fix",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "keywords": [
-    "eventbrite",
-    "coderdojo"
-  ],
+  "keywords": ["eventbrite", "coderdojo"],
   "author": "Coderdojo",
   "license": "MIT",
   "devDependencies": {
-    "chai": "^4.0.2",
+    "chai": "^4.1.1",
     "code": "^1.5.0",
+    "eslint": "^4.6.0",
+    "eslint-config-coderdojo": "^1.0.6",
+    "eslint-plugin-chai-friendly": "^0.4.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.3.0",
     "flat": "^2.0.1",
-    "lab": "^5.15.1",
-    "nodemon": "1.11.0",
-    "sinon": "^2.3.5",
-    "sinon-chai": "^2.11.0"
+    "lab": "^14.2.2",
+    "nodemon": "^1.11.0",
+    "sinon": "^2.4.1",
+    "sinon-chai": "^2.12.0"
   },
   "dependencies": {
     "async": "^2.5.0",
