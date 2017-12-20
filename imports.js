@@ -1,15 +1,23 @@
-var _ = require('lodash');
-var path = require('path');
-module.exports = function (configOverride) {
-  var config = require('./config/config.js')();
-  var log = require('cp-logs-lib')({name: 'cp-eventbrite', level: 'warn'});
+const _ = require('lodash');
+const path = require('path');
+const config = require('./config/config.js')();
+const cpLogs = require('cp-logs-lib');
+const cpPerm = require('cp-permissions-plugin');
+const seneca = require('seneca');
+const senecaEntity = require('seneca-entity');
+const senecaBasic = require('seneca-basic');
+const senecaJoi = require('seneca-joi');
+const { promisify } = require('bluebird');
+
+module.exports = (configOverride) => {
+  const log = cpLogs({ name: 'cp-eventbrite', level: 'warn' });
   config.log = log.log;
-  var seneca = require('seneca')(_.extend(config, configOverride));
-  seneca.use(require('seneca-entity'))
-  .use(require('seneca-basic'))
-  .use(require('seneca-joi'));
-  seneca.use('./cd-eventbrite', {});
-  seneca.use(require('cp-permissions-plugin'), {
-    config: path.resolve(__dirname + '/lib/eventbrite/controllers/perm') });
-  return seneca;
+  const server = seneca(_.extend(config, configOverride));
+  server.actAsync = promisify(server.act, { context: server });
+  server.use(senecaEntity).use(senecaBasic).use(senecaJoi);
+  server.use('./cd-eventbrite', {});
+  server.use(cpPerm, {
+    config: path.resolve(`${__dirname}/lib/eventbrite/controllers/perm`),
+  });
+  return server;
 };
