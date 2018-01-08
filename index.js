@@ -12,12 +12,17 @@ process.on('uncaughtException', shutdown);
 process.on('SIGUSR2', shutdown);
 
 function shutdown(err) {
-  if (err !== undefined && err.stack !== undefined) {
-    console.error(
-      `${new Date().toString()} FATAL: UncaughtException, please report: ${util.inspect(err)}`,
-    );
-    console.error(util.inspect(err.stack));
-    console.trace();
+  if (err !== undefined) {
+    const error = {
+      date: new Date().toString(),
+      msg:
+        err.stack !== undefined
+          ? `FATAL: UncaughtException, please report: ${util.inspect(err.stack)}`
+          : 'FATAL: UncaughtException, no stack trace',
+      err: util.inspect(err),
+    };
+    console.error(JSON.stringify(error));
+    process.exit(1);
   }
   process.exit(0);
 }
