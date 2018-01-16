@@ -12,7 +12,10 @@
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "keywords": ["eventbrite", "coderdojo"],
+  "keywords": [
+    "eventbrite",
+    "coderdojo"
+  ],
   "author": "Coderdojo",
   "license": "MIT",
   "devDependencies": {
@@ -42,6 +45,7 @@
     "joi": "^6.1",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
+    "newrelic": "^2.4.2",
     "request": "2.81.0",
     "seneca": "^2.1.0",
     "seneca-basic": "^0.5.0",
