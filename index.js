@@ -4,8 +4,6 @@ const config = require('./config/config.js')();
 const seneca = require('./imports')(config);
 const util = require('util');
 
-if (process.env.NEW_RELIC_ENABLED === 'true') require('newrelic'); // eslint-disable-line global-require
-
 process.on('SIGINT', shutdown);
 process.on('SIGTERM', shutdown);
 process.on('uncaughtException', shutdown);

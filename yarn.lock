@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@newrelic/native-metrics@^2.1.0", "@newrelic/native-metrics@^2.1.2":
+"@newrelic/native-metrics@^2.1.0":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@newrelic/native-metrics/-/native-metrics-2.1.2.tgz#9a595dc602654b717188a294507087a51e79fba3"
   dependencies:
@@ -2836,6 +2836,10 @@ seneca-mem-store@0.6.0:
   resolved "https://registry.yarnpkg.com/seneca-mem-store/-/seneca-mem-store-0.6.0.tgz#4088b5a5b40da5a0a20a83ef07bf0d56eb0b267f"
   dependencies:
     lodash "4.15.0"
+
+seneca-newrelic@wardormeur/seneca-newrelic:
+  version "0.0.1"
+  resolved "https://codeload.github.com/wardormeur/seneca-newrelic/tar.gz/7d58f553b7301ab114c391a77f6eea132e6d4af9"
 
 seneca-parambulator@0.2.0:
   version "0.2.0"
