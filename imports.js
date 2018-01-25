@@ -7,8 +7,6 @@ const seneca = require('seneca');
 const senecaEntity = require('seneca-entity');
 const senecaBasic = require('seneca-basic');
 const senecaJoi = require('seneca-joi');
-const senecaNewRelic = require('seneca-newrelic');
-const newrelic = process.env.NEW_RELIC_ENABLED === 'true' ? require('newrelic') : undefined;
 const { promisify } = require('bluebird');
 
 module.exports = (configOverride) => {
@@ -23,17 +21,6 @@ module.exports = (configOverride) => {
   server.use(cpPerm, {
     config: path.resolve(`${__dirname}/lib/eventbrite/controllers/perm`),
   });
-  if (!_.isUndefined(newrelic)) {
-    seneca.use(senecaNewRelic, {
-      newrelic,
-      roles: ['cd-eventbrite'],
-      filter (p) {
-        p.user = p.user ? p.user.id : undefined;
-        p.login = p.login ? p.login.id : undefined;
-        return p;
-      }
-    });
-  }
 
   return server;
 };
