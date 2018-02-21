@@ -1,21 +1,21 @@
 /* eslint-disable no-console */
 const newrelic = process.env.NEW_RELIC_ENABLED === 'true' ? require('newrelic') : undefined;
 const senecaNewRelic = require('seneca-newrelic');
-const service = 'cp-eventbrite-service';
 const config = require('./config/config.js')();
 const seneca = require('./imports')(config);
 const util = require('util');
 const { isUndefined } = require('lodash');
 
+const service = 'cp-eventbrite-service';
 if (!isUndefined(newrelic)) {
   seneca.use(senecaNewRelic, {
     newrelic,
     roles: ['cd-eventbrite'],
-    filter (p) {
+    filter(p) {
       p.user = p.user ? p.user.id : undefined;
       p.login = p.login ? p.login.id : undefined;
       return p;
-    }
+    },
   });
 }
 

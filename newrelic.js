@@ -9,7 +9,7 @@ exports.config = {
   agent_enabled: false, // set via NEW_RELIC_ENABLED for production
   license_key: '', // set via NEW_RELIC_LICENSE_KEY
   transaction_tracer: {
-    record_sql: 'obfuscated'
+    record_sql: 'obfuscated',
   },
   logging: {
     /**
