@@ -28,7 +28,7 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.3.0",
     "flat": "^2.0.1",
-    "lab": "^14.2.2",
+    "lab": "^14.3.2",
     "nodemon": "^1.11.0",
     "sinon": "^2.4.1",
     "sinon-chai": "^2.12.0"
